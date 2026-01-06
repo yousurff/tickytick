@@ -28,6 +28,8 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/dashboard" element={<MyDay />} />
           <Route path="/calendar" element={<Calendar />} />
+          {/* Profil sayfası için geçici bir placeholder veya bileşenin kendisi */}
+          <Route path="/dashboard/profile" element={<div>Profil Sayfası Yapım Aşamasında</div>} /> 
         </Route>
       </Routes>
     </Router>
