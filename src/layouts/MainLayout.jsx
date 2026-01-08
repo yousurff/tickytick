@@ -3,7 +3,7 @@ import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { getGreeting, formatDate, formatTime } from '../utils/helpers';
 import Button from '../components/common/Button';
-import CreateTaskModal from '../components/ui/CreateTaskModal'; // Modal'ı içe aktardık
+import CreateTaskModal from '../components/ui/CreateTaskModal';
 import logo from '../assets/logo/ticky_tick_logo.png';
 
 const MainLayout = () => {
@@ -11,8 +11,6 @@ const MainLayout = () => {
   const navigate = useNavigate();
   
   const [currentTime, setCurrentTime] = useState(new Date());
-  
-  // Modalın açık/kapalı durumu
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
@@ -25,10 +23,7 @@ const MainLayout = () => {
     navigate('/login');
   };
 
-  // Yeni görev eklenince çalışacak fonksiyon (İleride listeyi yenilemek için kullanacağız)
   const handleTaskAdded = () => {
-    // Sayfa yenilenmeden veriyi çekmek için buraya global bir state veya context eklenebilir.
-    // Şimdilik sayfayı yenilemek en basit çözüm:
     window.location.reload(); 
   };
 
@@ -70,9 +65,12 @@ const MainLayout = () => {
           
           {/* Menü Linkleri */}
           <nav className="flex items-center gap-1">
-            <NavLink to="/dashboard" className={navLinkClass}>
+            
+            {/* DÜZELTME BURADA YAPILDI: "end" eklendi */}
+            <NavLink to="/dashboard" end className={navLinkClass}>
               Günüm
             </NavLink>
+            
             <NavLink to="/calendar" className={navLinkClass}>
               Takvimim
             </NavLink>
@@ -84,7 +82,7 @@ const MainLayout = () => {
           {/* Ayırıcı Çizgi */}
           <div className="w-px h-6 bg-cream-900/10 mx-1"></div>
 
-          {/* GÖREV EKLEME BUTONU (Kare ve Artı) */}
+          {/* GÖREV EKLEME BUTONU */}
           <button 
             onClick={() => setIsModalOpen(true)}
             className="w-9 h-9 bg-cream-900 hover:bg-cream-800 text-cream-50 rounded-lg flex items-center justify-center shadow-md transition-all hover:scale-105 active:scale-95"
