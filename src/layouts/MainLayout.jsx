@@ -4,6 +4,9 @@ import { useAuth } from '../context/AuthContext';
 import { getGreeting, formatDate, formatTime } from '../utils/helpers';
 import Button from '../components/common/Button';
 
+// LOGOYU BURADAN İÇERİ AKTARIYORUZ
+import logo from '../assets/logo/ticky_tick_logo.png';
+
 const MainLayout = () => {
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
@@ -32,17 +35,18 @@ const MainLayout = () => {
   return (
     <div className="min-h-screen bg-cream-50 font-sans flex flex-col">
       
-      {/* --- HEADER (Tasarımındaki Plaza Barı) --- */}
+      {/* --- HEADER --- */}
       <header className="bg-[#D2CFC2] px-8 py-3 flex items-center justify-between shadow-md sticky top-0 z-50">
         
-        {/* SOL: Logo/Buton ve Selamlama */}
+        {/* SOL: Logo ve Selamlama */}
         <div className="flex items-center gap-4">
-          {/* Kare Buton (Logo Yerine) */}
-          <div className="w-10 h-10 bg-cream-50 rounded-lg flex items-center justify-center shadow-inner text-cream-900">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-5 h-5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-            </svg>
-          </div>
+          
+          {/* LOGO GÜNCELLEMESİ */}
+          <img 
+            src={logo} 
+            alt="Ticky Tick Logo" 
+            className="w-10 h-10 object-contain drop-shadow-sm"
+          />
 
           <div className="flex flex-col">
             <h1 className="text-lg font-bold text-white drop-shadow-sm leading-none mb-1">

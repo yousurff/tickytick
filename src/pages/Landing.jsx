@@ -1,6 +1,9 @@
 import React from 'react';
 import Button from '../components/common/Button';
 
+// LOGOYU BURADAN İÇERİ AKTARIYORUZ
+import logo from '../assets/logo/ticky_tick_logo.png';
+
 const Landing = () => {
   return (
     <div className="min-h-screen flex flex-col bg-cream-100 text-cream-900 font-sans overflow-hidden">
@@ -9,9 +12,12 @@ const Landing = () => {
       <header className="w-full py-6 px-8 flex justify-between items-center max-w-7xl mx-auto">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-cream-900 rounded-xl shadow-lg flex items-center justify-center text-cream-50 font-bold text-xl">
-            T
-          </div>
+          {/* LOGO GÜNCELLEMESİ */}
+          <img 
+            src={logo} 
+            alt="Logo" 
+            className="w-12 h-12 object-contain"
+          />
           <span className="text-xl font-bold tracking-tight text-cream-900">Ticky Tick</span>
         </div>
 
@@ -29,7 +35,6 @@ const Landing = () => {
       {/* --- MAIN HERO SECTION --- */}
       <main className="flex-1 flex flex-col items-center justify-center text-center px-4 relative">
         
-        {/* Arkaplan Süslemesi (Hafif Yuvarlaklar) */}
         <div className="absolute top-10 left-10 w-64 h-64 bg-cream-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
         <div className="absolute bottom-10 right-10 w-64 h-64 bg-cream-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
 
@@ -56,7 +61,6 @@ const Landing = () => {
           </div>
         </div>
 
-        {/* Alt Görsel Alanı */}
         <div className="mt-20 w-full max-w-6xl mx-auto px-4">
           <div className="bg-white/40 backdrop-blur-xl border border-white/50 rounded-t-3xl shadow-2xl p-4 h-48 md:h-80 flex items-center justify-center">
              <span className="text-cream-400 font-medium tracking-widest text-sm uppercase">
@@ -66,7 +70,6 @@ const Landing = () => {
         </div>
       </main>
 
-      {/* Footer */}
       <footer className="py-6 text-center text-xs text-cream-400 font-medium">
         &copy; 2026 Ticky Tick. Tüm hakları saklıdır.
       </footer>
