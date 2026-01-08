@@ -3,21 +3,21 @@ import Button from '../components/common/Button';
 
 const Landing = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-cream-100 text-cream-900 font-sans">
+    <div className="min-h-screen flex flex-col bg-cream-100 text-cream-900 font-sans overflow-hidden">
       
       {/* --- HEADER --- */}
       <header className="w-full py-6 px-8 flex justify-between items-center max-w-7xl mx-auto">
-        {/* Sol Üst: Logo ve İsim  */}
+        {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-cream-900 rounded-md flex items-center justify-center text-cream-50 font-bold text-lg">
+          <div className="w-10 h-10 bg-cream-900 rounded-xl shadow-lg flex items-center justify-center text-cream-50 font-bold text-xl">
             T
           </div>
-          <span className="text-xl font-bold tracking-tight">Ticky Tick</span>
+          <span className="text-xl font-bold tracking-tight text-cream-900">Ticky Tick</span>
         </div>
 
-        {/* Sağ Üst: Giriş ve Kayıt Butonları  */}
+        {/* Butonlar */}
         <div className="flex gap-4">
-          <Button to="/login" variant="ghost">
+          <Button to="/login" variant="ghost" className="hidden sm:inline-flex">
             Giriş Yap
           </Button>
           <Button to="/register" variant="primary">
@@ -26,38 +26,48 @@ const Landing = () => {
         </div>
       </header>
 
-      {/* --- MAIN CONTENT (HERO) --- */}
-      <main className="flex-1 flex flex-col items-center justify-center text-center px-4 mt-10">
+      {/* --- MAIN HERO SECTION --- */}
+      <main className="flex-1 flex flex-col items-center justify-center text-center px-4 relative">
         
-        {/* Başlık ve Açıklama  */}
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-cream-900">
-          Zamanı Yönet,<br />
-          <span className="text-cream-400">Hayatı Yakala.</span>
-        </h1>
-        
-        <p className="text-lg md:text-xl text-gray-600 max-w-2xl mb-10 leading-relaxed">
-          Modern, sade ve plaza şıklığında bir iş takip deneyimi. 
-          Gününüzü planlayın, görevlerinizi organize edin ve üretkenliğinizi artırın.
-        </p>
+        {/* Arkaplan Süslemesi (Hafif Yuvarlaklar) */}
+        <div className="absolute top-10 left-10 w-64 h-64 bg-cream-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+        <div className="absolute bottom-10 right-10 w-64 h-64 bg-cream-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
 
-        {/* Call to Action */}
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Button to="/register" variant="primary" className="px-10 py-4 text-lg">
-            Hemen Başla
-          </Button>
-          <Button to="/login" variant="outline" className="px-10 py-4 text-lg">
-             Daha Fazla Bilgi
-          </Button>
+        <div className="z-10 max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight text-cream-900 leading-tight">
+            Zamanı Yönet,<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cream-400 to-cream-900">
+              Hayatı Yakala.
+            </span>
+          </h1>
+          
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-12 leading-relaxed">
+            Karmaşadan uzak, sade ve modern bir iş takip deneyimi. 
+            "Ticky Tick" ile gününü planla, hedeflerine odaklan.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-5 justify-center">
+            <Button to="/register" variant="primary" className="px-12 py-4 text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all">
+              Hemen Başla
+            </Button>
+            <Button to="/login" variant="outline" className="px-12 py-4 text-lg border-cream-900">
+               Hesabım Var
+            </Button>
+          </div>
         </div>
 
-        {/* Görsel Temsili (İleride ekran görüntüsü konabilir) */}
-        <div className="mt-20 w-full max-w-5xl h-64 md:h-96 bg-cream-200 rounded-t-3xl border-t border-l border-r border-cream-300 shadow-xl flex items-center justify-center">
-           <p className="text-cream-400 font-medium">Uygulama Önizleme Alanı</p>
+        {/* Alt Görsel Alanı */}
+        <div className="mt-20 w-full max-w-6xl mx-auto px-4">
+          <div className="bg-white/40 backdrop-blur-xl border border-white/50 rounded-t-3xl shadow-2xl p-4 h-48 md:h-80 flex items-center justify-center">
+             <span className="text-cream-400 font-medium tracking-widest text-sm uppercase">
+               • Uygulama Önizleme •
+             </span>
+          </div>
         </div>
       </main>
 
-      {/* --- FOOTER --- */}
-      <footer className="py-6 text-center text-sm text-cream-400">
+      {/* Footer */}
+      <footer className="py-6 text-center text-xs text-cream-400 font-medium">
         &copy; 2026 Ticky Tick. Tüm hakları saklıdır.
       </footer>
     </div>

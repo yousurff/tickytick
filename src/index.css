@@ -10,7 +10,7 @@
   }
 }
 
-/* Scrollbar Özelleştirmesi (Daha şık durması için) */
+/* Kaydırma Çubuğu Güzelleştirme */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -18,8 +18,8 @@
   @apply bg-cream-100;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-cream-300 rounded-full;
+  @apply bg-cream-400 rounded-full;
 }
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-cream-400;
+  @apply bg-cream-900;
 }
