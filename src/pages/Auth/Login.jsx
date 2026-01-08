@@ -30,6 +30,16 @@ const Login = () => {
 
   return (
     <div>
+      {/* YENİ: Geri Dön Butonu */}
+      <div className="mb-6 -mt-2">
+        <Link to="/" className="inline-flex items-center gap-2 text-xs font-bold text-cream-400 hover:text-cream-900 transition-colors uppercase tracking-wider group">
+           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 group-hover:-translate-x-1 transition-transform">
+             <path fillRule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clipRule="evenodd" />
+           </svg>
+           Anasayfa
+        </Link>
+      </div>
+
       <div className="mb-6">
         <h2 className="text-2xl font-bold text-cream-900">Tekrar Hoş Geldin</h2>
         <p className="text-gray-500 text-sm mt-1">Planlamaya kaldığın yerden devam et.</p>
